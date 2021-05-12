@@ -13,24 +13,27 @@ const randomIntegerFromInterval = (min, max) => {
    return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-console.log(randomIntegerFromInterval(0,colors.length));
-
 const btnStartEl = document.querySelector('[data-action = start]');
-console.log(btnStartEl.getAttribute('data-action'));
-
 const btnStopEl = document.querySelector('[data-action = stop]');
-console.log(btnStopEl.getAttribute('data-action'));
 
 btnStartEl.addEventListener('click', onClick);
 btnStopEl.addEventListener('click', onClick);
 
-function onClick(){ 
+const changeBodyBackground = () => {
+    document.body.style.background = colors[randomIntegerFromInterval(0,colors.length)];
+};
+
+let intervalId = 0;
+
+function onClick() {     
     if (this.getAttribute('data-action') === 'start'){
-     document.body.classList.add(background);
-        console.log('меняем фон', this.getAttribute('data-action'));
+        const interId = setInterval(changeBodyBackground, 300, 300);
+        intervalId = interId;
+        btnStartEl.setAttribute('disabled', true);    
     } else {
-        console.log('НЕ меняем фон', this.getAttribute('data-action'));
-    };    
+        clearInterval(intervalId);
+        btnStartEl.removeAttribute('disabled');      
+    };
 };
 
 
