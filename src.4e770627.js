@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./../images/demo.jpg":[["demo.090c7c6d.jpg","nKR3"],"nKR3"]}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss");var t=["#FFFFFF","#2196F3","#4CAF50","#FF9800","#009688","#795548"],e=function(t,e){return Math.floor(Math.random()*(e-t+1)+t)},a=document.querySelector("[data-action = start]"),r=document.querySelector("[data-action = stop]");a.addEventListener("click",s),r.addEventListener("click",s);var n=function(){document.body.style.background=t[e(0,t.length)]},i=0;function s(){if("start"===this.getAttribute("data-action")){var t=setInterval(n,300,300);i=t,a.setAttribute("disabled",!0)}else clearInterval(i),a.removeAttribute("disabled")}
 },{"./sass/main.scss":"clu1"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-11-color-switch/src.05d8c34e.js.map
+//# sourceMappingURL=/goit-js-hw-11-color-switch/src.4e770627.js.map
