@@ -35,6 +35,7 @@ function onClick() {
         btnStartEl.removeAttribute('disabled');      
     };
 };
+// npm run dev
 
 
 
